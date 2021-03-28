@@ -27,6 +27,12 @@ class Application(tk.Frame):
 		editMenu = Menu(menu)
 		editMenu.add_command(label="Undo")
 		editMenu.add_command(label="Redo")
+		editMenu.add_separator()
+		editMenu.add_command("Scale Up")
+		editMenu.add_command("Scale Down")
+		editMenu.add_separator()
+		editMenu.add_command("Node")
+		
 		menu.add_cascade(label="Edit", menu=editMenu)
 		
 		self.pack()
