@@ -28,9 +28,27 @@ class MainMenu():
 		editMenu.add_separator()
 		editMenu.add_command(label="Scale Up")
 		editMenu.add_command(label="Scale Down")
-		editMenu.add_separator()
-		editMenu.add_command(label="Node")
 		
 		menu.add_cascade(label="Edit", menu=editMenu)
+		
+		nodeMenu = Menu(menu)
+		nodeMenu.add_command(label="Create New")
+		nodeMenu.add_command(label="Select")
+		nodeMenu.add_command(label="Move")
+		nodeMenu.add_command(label="Rename")
+		nodeMenu.add_command(label="Delete")
+		nodeMenu.add_separator()
+		nodeMenu.add_command(label="Options")
+		
+		menu.add_cascade(label="Node", menu=nodeMenu)
+		
+		aboutMenu = Menu(menu)
+		aboutMenu.add_command(label="Help")
+		aboutMenu.add_command(label="Documentation")
+		aboutMenu.add_command(label="Translations")
+		aboutMenu.add_separator()
+		aboutMenu.add_command(label="Info")
+		
+		menu.add_cascade(label="About", menu=aboutMenu)
 		
 		self.pack()
