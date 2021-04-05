@@ -51,4 +51,22 @@ class MainMenu():
 		
 		menu.add_cascade(label="About", menu=aboutMenu)
 		
+		gridMenu = Menu(menu)
+		gridMenu.add_command(label="New")
+		gridMenu.add_command(label="Save")
+		gridMenu.add_command(label="Save As")
+		gridMenu.add_separator()
+		gridMenu.add_command(label="Options")
+		
+		menu.add_cascade(label="Grid", menu=gridMenu)
+		
+		settingsMenu = Menu(menu)
+		settingsMenu.add_command(label="Window")
+		settingsMenu.add_command(label="Workflow layout")
+		settingsMenu.add_command(label="Styles")
+		settingsMenu.add_separator()
+		settingsMenu.add_command(label="Restore Default")
+		
+		menu.add_cascade(label="Settings", menu=settingsMenu)
+		
 		self.pack()
