@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import *
 from main_menu import MainMenu
+from user_input import UserInput
 
 class Application(tk.Frame):
 	def __init__(self, master=None):
@@ -8,12 +9,13 @@ class Application(tk.Frame):
 		self.master = master
 		
 		menu = MainMenu.main_menu(self)
+		entry = UserInput.user_input()
 	
 	def exitProgram(self):
 		exit()
 
 root = tk.Tk()
-root.geometry("500x500+100+100")
+root.geometry("750x750+200+300")
 root.title("Wireless Sensor Network")
 
 frame = tk.Frame(root, width=500, height=500, background="white")
