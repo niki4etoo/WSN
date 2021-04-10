@@ -7,5 +7,9 @@ class UserInput():
 		self.user_input()
 
 	def user_input():
-		entry = Entry()
-		entry.pack()
+		entry_label_node_id = Label(text="ID:")
+		entry_node_id = Entry(bg="black", fg="white")
+		
+		//To do
+		entry_label_node_id.pack(side=LEFT)
+		entry_node_id.pack(side=LEFT)

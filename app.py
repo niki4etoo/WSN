@@ -8,8 +8,9 @@ class Application(tk.Frame):
 		super().__init__(master)
 		self.master = master
 		
-		menu = MainMenu.main_menu(self)
 		entry = UserInput.user_input()
+		menu = MainMenu.main_menu(self)
+		
 	
 	def exitProgram(self):
 		exit()
