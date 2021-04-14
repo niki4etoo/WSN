@@ -8,9 +8,8 @@ class Application(tk.Frame):
 		super().__init__(master)
 		self.master = master
 		
-		entry = UserInput.user_input()
 		menu = MainMenu.main_menu(self)
-		
+		entry = UserInput.user_input()		
 	
 	def exitProgram(self):
 		exit()
@@ -18,9 +17,6 @@ class Application(tk.Frame):
 root = tk.Tk()
 root.geometry("750x750+200+300")
 root.title("Wireless Sensor Network")
-
-frame = tk.Frame(root, width=500, height=500, background="white")
-frame.pack()
 	
 app = Application(master=root)
 app.mainloop()

@@ -7,8 +7,11 @@ class UserInput():
 		self.user_input()
 
 	def user_input():
+		#Entries
 		entry_label_node_id = Label(text="ID:")
 		entry_node_id = Entry(bg="black", fg="white")
+		
+		#Buttons
 		
 		btn_add = Button(text="Add")
 		btn_edit = Button(text="Edit")

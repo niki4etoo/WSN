@@ -1,5 +1,9 @@
 import tkinter as tk
 from tkinter import *
+from tkinter.messagebox import showinfo
+def openInfoBox():
+		showinfo(title="Short Description about the author",
+				 message="Hi, nice user! My name is Nikolay Nanev!");
 
 class MainMenu():
 	def __init__(self, master=None):
@@ -47,7 +51,7 @@ class MainMenu():
 		aboutMenu.add_command(label="Documentation")
 		aboutMenu.add_command(label="Translations")
 		aboutMenu.add_separator()
-		aboutMenu.add_command(label="Info")
+		aboutMenu.add_command(label="Info", command=openInfoBox)
 		
 		menu.add_cascade(label="About", menu=aboutMenu)
 		
