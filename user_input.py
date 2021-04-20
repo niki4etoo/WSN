@@ -16,9 +16,9 @@ class UserInput():
 		entry_node_position = Entry(bg="black", fg="white")
 		#Buttons
 		
-		btn_add = Button(text="Add")
-		btn_edit = Button(text="Edit")
-		btn_remove = Button(text="Remove")
+		btn_add = Button(text="Add", command=add_message_box)
+		btn_edit = Button(text="Edit", command=edit_message_box)
+		btn_remove = Button(text="Remove", command=remove_message_box)
 		
 		#To do
 		entry_label_node_id.pack(side=LEFT)
@@ -31,7 +31,15 @@ class UserInput():
 		entry_node_name.pack(side=LEFT)
 		entry_label_node_position.pack(side=LEFT)
 		entry_node_position.pack(side=LEFT)
+
+
+
+def add_message_box():
+	tk.messagebox.showinfo("Add new node", "You have just added new node")
 		
-		
-		
+def edit_message_box():
+	tk.messagebox.showinfo("Edit node", "You need to edit this node")
+	
+def remove_message_box():
+	tk.messagebox.showinfo("Remove node", "You have just removed the node")
 		

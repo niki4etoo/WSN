@@ -17,6 +17,6 @@ class Application(tk.Frame):
 root = tk.Tk()
 root.geometry("750x750+200+300")
 root.title("Wireless Sensor Network")
-	
+
 app = Application(master=root)
 app.mainloop()
