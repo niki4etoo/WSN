@@ -1,9 +1,14 @@
 import tkinter as tk
 from tkinter import *
 from tkinter.messagebox import showinfo
+
 def openInfoBox():
 		showinfo(title="Short Description about the author",
-				 message="Hi, nice user! My name is Nikolay Nanev!");
+				 message="Hi, nice user! My name is Nikolay Nanev!")
+
+def optionsWindow():
+	showinfo(title="Options for the WSN Simulator v1.0",
+			message="To DO")
 
 class MainMenu():
 	def __init__(self, master=None):
@@ -42,7 +47,7 @@ class MainMenu():
 		nodeMenu.add_command(label="Rename")
 		nodeMenu.add_command(label="Delete")
 		nodeMenu.add_separator()
-		nodeMenu.add_command(label="Options")
+		nodeMenu.add_command(label="Options", command=optionsWindow)
 		
 		menu.add_cascade(label="Node", menu=nodeMenu)
 		

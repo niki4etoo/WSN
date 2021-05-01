@@ -21,6 +21,7 @@ checker_node = IntVar()
 
 check_btn_active_node = Checkbutton(root, text="Is Active", variable=checker_node, \
 									onvalue = 1, offvalue = 0, height = 5, width = 20)
+
 check_btn_active_node.pack()
 
 app = Application(master=root)
