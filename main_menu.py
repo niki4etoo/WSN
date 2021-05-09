@@ -10,6 +10,11 @@ def optionsWindow():
 	showinfo(title="Options for the WSN Simulator v1.0",
 			message="To DO")
 
+def createNewGrid():
+	rows, cols = (32, 32)
+	arr = [[0]*cols]*rows
+	print(arr)
+
 class MainMenu():
 	def __init__(self, master=None):
 		self.master = master
@@ -20,7 +25,7 @@ class MainMenu():
 		self.master.config(menu=menu)
 		
 		fileMenu = Menu(menu)
-		fileMenu.add_command(label="New")
+		fileMenu.add_command(label="New", command=createNewGrid)
 		fileMenu.add_command(label="Open")
 		fileMenu.add_command(label="Save")
 		fileMenu.add_command(label="Save As")
