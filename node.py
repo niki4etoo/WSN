@@ -6,6 +6,12 @@ class Node:
 		self.posY = posY 	 # Position Y on the grid
 		self.active = active # Is active
 
+	def isEndingNode():
+		pass
+		
+	def isStartingNode():
+		pass
+
 	def description(self):
 		pass
 		
