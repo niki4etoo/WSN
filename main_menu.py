@@ -60,6 +60,8 @@ class MainMenu():
 		aboutMenu.add_command(label="Help")
 		aboutMenu.add_command(label="Documentation")
 		aboutMenu.add_command(label="Translations")
+		aboutMenu.add_command(label="English")
+		aboutMenu.add_command(label="Bulgarian")
 		aboutMenu.add_separator()
 		aboutMenu.add_command(label="Info", command=openInfoBox)
 		
