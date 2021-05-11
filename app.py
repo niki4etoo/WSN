@@ -1,7 +1,17 @@
 import tkinter as tk
 from tkinter import *
+from pynput.mouse import Button, Controller
 from main_menu import MainMenu
 from user_input import UserInput
+
+mouse = Controller()
+
+print('The current pointer position is {0}'.format(mouse.position))
+
+mouse.position = (10, 20)
+print('Now we have moved it to {0}'.format(mouse.position))
+
+mouse.move(5, -5)
 
 class Application(tk.Frame):
 	def __init__(self, master=None):
