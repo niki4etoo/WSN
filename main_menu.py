@@ -3,12 +3,12 @@ from tkinter import *
 from tkinter.messagebox import showinfo
 
 def openInfoBox():
-		showinfo(title="Short Description about the author",
-				 message="Hi, nice user! My name is Nikolay Nanev!")
+		showinfo(title="Кратка информация за мен",
+				 message="Здравей, потребителю! Името ми е Николай Нанев. Създадох това приложение с целта да обезпеча търсенето на най-кратък път между два възела в една безжична мрежа.")
 
 def optionsWindow():
-	showinfo(title="Options for the WSN Simulator v1.0",
-			message="To DO")
+	showinfo(title="Опции за БСМ Симулатор в1.0",
+			message="Предстои разработка")
 
 def createNewGrid():
 	rows, cols = (32, 32)
@@ -25,64 +25,64 @@ class MainMenu():
 		self.master.config(menu=menu)
 		
 		fileMenu = Menu(menu)
-		fileMenu.add_command(label="New", command=createNewGrid)
-		fileMenu.add_command(label="Open")
-		fileMenu.add_command(label="Save")
-		fileMenu.add_command(label="Save As")
+		fileMenu.add_command(label="Нов", command=createNewGrid)
+		fileMenu.add_command(label="Отвори")
+		fileMenu.add_command(label="Запази")
+		fileMenu.add_command(label="Запази като")
 		fileMenu.add_separator()
-		fileMenu.add_command(label="Import ...")
-		fileMenu.add_command(label="Export ...")
+		fileMenu.add_command(label="Вмъкни ...")
+		fileMenu.add_command(label="Извади ...")
 		fileMenu.add_separator()
-		fileMenu.add_command(label="Exit", command=self.exitProgram)
-		menu.add_cascade(label="File", menu=fileMenu)
+		fileMenu.add_command(label="Изход", command=self.exitProgram)
+		menu.add_cascade(label="Файл", menu=fileMenu)
 		
 		editMenu = Menu(menu)
-		editMenu.add_command(label="Undo")
-		editMenu.add_command(label="Redo")
+		editMenu.add_command(label="Назад")
+		editMenu.add_command(label="Напред")
 		editMenu.add_separator()
-		editMenu.add_command(label="Scale Up")
-		editMenu.add_command(label="Scale Down")
+		editMenu.add_command(label="Увеличи")
+		editMenu.add_command(label="Намали")
 		
-		menu.add_cascade(label="Edit", menu=editMenu)
+		menu.add_cascade(label="Редактиране", menu=editMenu)
 		
 		nodeMenu = Menu(menu)
-		nodeMenu.add_command(label="Create New")
-		nodeMenu.add_command(label="Select")
-		nodeMenu.add_command(label="Move")
-		nodeMenu.add_command(label="Rename")
-		nodeMenu.add_command(label="Delete")
+		nodeMenu.add_command(label="Създай нов")
+		nodeMenu.add_command(label="Избери")
+		nodeMenu.add_command(label="Премести")
+		nodeMenu.add_command(label="Преименувай")
+		nodeMenu.add_command(label="Изтрий")
 		nodeMenu.add_separator()
-		nodeMenu.add_command(label="Options", command=optionsWindow)
+		nodeMenu.add_command(label="Опции", command=optionsWindow)
 		
-		menu.add_cascade(label="Node", menu=nodeMenu)
+		menu.add_cascade(label="Възел", menu=nodeMenu)
 		
 		aboutMenu = Menu(menu)
-		aboutMenu.add_command(label="Help")
-		aboutMenu.add_command(label="Documentation")
-		aboutMenu.add_command(label="Translations")
-		aboutMenu.add_command(label="English")
-		aboutMenu.add_command(label="Bulgarian")
+		aboutMenu.add_command(label="Помощ")
+		aboutMenu.add_command(label="Документация")
+		aboutMenu.add_command(label="Преводи")
+		aboutMenu.add_command(label="Английски")
+		aboutMenu.add_command(label="Български")
 		aboutMenu.add_separator()
-		aboutMenu.add_command(label="Info", command=openInfoBox)
+		aboutMenu.add_command(label="Информация", command=openInfoBox)
 		
-		menu.add_cascade(label="About", menu=aboutMenu)
+		menu.add_cascade(label="Относно", menu=aboutMenu)
 		
 		gridMenu = Menu(menu)
-		gridMenu.add_command(label="New")
-		gridMenu.add_command(label="Save")
-		gridMenu.add_command(label="Save As")
+		gridMenu.add_command(label="Нов")
+		gridMenu.add_command(label="Запази")
+		gridMenu.add_command(label="Запази като")
 		gridMenu.add_separator()
-		gridMenu.add_command(label="Options")
+		gridMenu.add_command(label="Опции")
 		
-		menu.add_cascade(label="Grid", menu=gridMenu)
+		menu.add_cascade(label="Мрежа", menu=gridMenu)
 		
 		settingsMenu = Menu(menu)
-		settingsMenu.add_command(label="Window")
-		settingsMenu.add_command(label="Workflow layout")
-		settingsMenu.add_command(label="Styles")
+		settingsMenu.add_command(label="Прозорец")
+		settingsMenu.add_command(label="Шаблон на работната среда")
+		settingsMenu.add_command(label="Стилове")
 		settingsMenu.add_separator()
-		settingsMenu.add_command(label="Restore Default")
+		settingsMenu.add_command(label="Върни по подразбиране")
 		
-		menu.add_cascade(label="Settings", menu=settingsMenu)
+		menu.add_cascade(label="Настройки", menu=settingsMenu)
 		
 		self.pack()

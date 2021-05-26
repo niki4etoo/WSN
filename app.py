@@ -19,7 +19,7 @@ class Application(tk.Frame):
 		self.master = master
 		
 		menu = MainMenu.main_menu(self)
-		entry = UserInput.user_input()		
+		entry = UserInput.user_input(self)		
 	
 	def exitProgram(self):
 		exit()
@@ -30,7 +30,7 @@ root.title("Wireless Sensor Network")
 checker_node = IntVar()
 
 check_btn_active_node = Checkbutton(root, text="Is Active", variable=checker_node, \
-									onvalue = 1, offvalue = 0, height = 5, width = 20)
+									onvalue = 1, offvalue = 0, height = 1, width = 10)
 
 check_btn_active_node.pack()
 
