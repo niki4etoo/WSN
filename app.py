@@ -1,6 +1,10 @@
 import tkinter as tk
 from tkinter import *
 from pynput.mouse import Button, Controller
+
+import networkx as nx
+import matplotlib.pyplot as plt
+
 from main_menu import MainMenu
 from user_input import UserInput
 
@@ -34,5 +38,11 @@ check_btn_active_node = Checkbutton(root, text="Is Active", variable=checker_nod
 
 check_btn_active_node.pack()
 
+G = nx.petersen_graph()
+plt.subplot(121)
+nx.draw(G, with_labels=True, font_weight='bold')
+plt.subplot(122)
+nx.draw_shell(G, nlist=[range(5, 10), range(5)], with_labels=True, font_weight='bold')
+plt.show()
 app = Application(master=root)
 app.mainloop()
