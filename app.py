@@ -65,5 +65,13 @@ nx.draw(H, pos, node_color="b", node_size=20, with_labels=False)
 
 plt.show()
 
+P = nx.cubical_graph()
+plt.subplot(121)
+nx.draw(P)
+plt.subplot(122)
+nx.draw(P, pos=nx.circular_layout(P), node_color='r', edge_color='b')
+
+plt.show()
+
 app = Application(master=root)
 app.mainloop()
