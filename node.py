@@ -2,6 +2,10 @@ class Node:
 	starting = True
 	ending = False
 	
+	name = ""
+	weight = [1, 20]
+	active = True
+	
 	def __init__(self, name, grid, posX, posY, active):
 		self.name = name 	 # Name of the node
 		self.grid = grid	 # Which grid the node will be placed
