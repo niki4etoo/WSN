@@ -2,13 +2,6 @@ import tkinter as tk
 from tkinter import *
 from tkinter.messagebox import showinfo
 
-def openInfoBox():
-		showinfo(title="Кратка информация за мен",
-				 message="Здравей, потребителю! Името ми е Николай Нанев. Създадох това приложение с целта да обезпеча търсенето на най-кратък път между два възела в една безжична мрежа.")
-
-def optionsWindow():
-	showinfo(title="Опции за БСМ Симулатор в1.0",
-			message="Предстои разработка")
 
 def createNewGrid():
 	rows, cols = (32, 32)
@@ -51,8 +44,6 @@ class MainMenu():
 		nodeMenu.add_command(label="Премести")
 		nodeMenu.add_command(label="Преименувай")
 		nodeMenu.add_command(label="Изтрий")
-		nodeMenu.add_separator()
-		nodeMenu.add_command(label="Опции", command=optionsWindow)
 		
 		menu.add_cascade(label="Възел", menu=nodeMenu)
 		
@@ -62,8 +53,6 @@ class MainMenu():
 		aboutMenu.add_command(label="Преводи")
 		aboutMenu.add_command(label="Английски")
 		aboutMenu.add_command(label="Български")
-		aboutMenu.add_separator()
-		aboutMenu.add_command(label="Информация", command=openInfoBox)
 		
 		menu.add_cascade(label="Относно", menu=aboutMenu)
 		
