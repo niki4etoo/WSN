@@ -12,5 +12,6 @@ class Grid:
 		self.height = height
 		self.nodesCount = nodesCount
 		
-	def description(self):
-		pass	#To Do
+	def description(self, title, text):
+		self.title = title
+		self.text = text
