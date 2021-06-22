@@ -3,10 +3,18 @@ from tkinter import *
 from tkinter.messagebox import showinfo
 
 
+def numberOfCells():
+	entry_label_node_id = Label(text="Number of Cells:")
+	entry_node_id = Entry(bg="black", fg="white")
+	entry_label_node_name.pack(side=LEFT)
+	entry_node_name.pack(side=LEFT)
+
 def createNewGrid():
+	numberOfCells()
 	rows, cols = (32, 32)
 	arr = [[0]*cols]*rows
 	print(arr)
+		
 
 class MainMenu():
 	def __init__(self, master=None):
