@@ -3,11 +3,23 @@ from tkinter import *
 from tkinter.messagebox import showinfo
 
 
+def newGridWithNodes(nodes_count):
+	if nodes_count >= 3:
+		print("Работеща мрежа")
+	elif nodes_count < 2:
+		print("Броят възли е по-малък от 2. Моля добавете повече от два възела")
+
 def numberOfCells():
-	entry_label_node_id = Label(text="Number of Cells:")
-	entry_node_id = Entry(bg="black", fg="white")
-	entry_label_node_name.pack(side=LEFT)
-	entry_node_name.pack(side=LEFT)
+	entry_label_node_id = Label(text="Брой възли:")
+	entry_node_id = Entry(bg="white", fg="black", border=3)
+	
+	# Add button
+	button_add = Button(text="Добави", command=lambda: newGridWithNodes(int(entry_node_id.get())))
+	
+	entry_label_node_id.pack(side=TOP, fill=BOTH)
+	entry_node_id.pack(side=TOP, fill=BOTH)
+	button_add.pack(side=TOP, fill=BOTH)
+	pass
 
 def createNewGrid():
 	numberOfCells()

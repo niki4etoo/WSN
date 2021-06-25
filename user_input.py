@@ -1,17 +1,6 @@
 import tkinter as tk
 from tkinter import *
 
-def add_message_box(self):
-	tk.messagebox.showinfo("Add new node", "You have just added new node")
-	node_label_result = Label(text=entry_node_id.get())
-	node_label_result.pack(side=RIGHT)
-		
-def edit_message_box(self):
-	tk.messagebox.showinfo("Edit node", "You need to edit this node")
-	
-def remove_message_box(self):
-	tk.messagebox.showinfo("Remove node", "You have just removed the node")
-
 class UserInput():
 	def __init__(self, master=None):
 		self.master = master
