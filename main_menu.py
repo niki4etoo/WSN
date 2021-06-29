@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import *
 from tkinter.messagebox import showinfo
-
+from tkinter import filedialog
 
 #Each node parameters
 global node_name
@@ -124,6 +124,9 @@ def createNewGrid():
 	button_add.grid(row=1, column=2)
 	pass
 		
+def openFile():
+	filedialog.askopenfilename(initialdir="files", title="Select a file", filetypes=(("pdf files", "*.pdf"),("project files", "*.prjwsn")))
+
 def saveNewGrid():
 	pass
 	
@@ -165,7 +168,7 @@ class MainMenu():
 		
 		fileMenu = Menu(menu)
 		fileMenu.add_command(label="Нов", command=createNewGrid)
-		fileMenu.add_command(label="Отвори")
+		fileMenu.add_command(label="Отвори", command=openFile)
 		fileMenu.add_command(label="Запази", command=saveNewGrid)
 		fileMenu.add_command(label="Запази като", command=saveAsNewGrid)
 		fileMenu.add_separator()
