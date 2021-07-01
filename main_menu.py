@@ -37,8 +37,6 @@ def add_nodes(i, nodes_count, name, weight, pos_x, pos_y, node_state):
 	node_start_radiobutton = Radiobutton(nodes_frame, text="Начален", variable=node_state, value="1")
 	node_end_radiobutton = Radiobutton(nodes_frame, text="Краен", variable=node_state, value="2")	
 	
-	
-	
 	if i == nodes_count:
 		node_button_add = Button(nodes_frame, text="Добави", state=DISABLED)
 		
@@ -112,6 +110,9 @@ def createNewGrid():
 	global button_add
 	global entry_label_node_id
 	global entry_node_id
+	
+	# Creating new project file
+	new_file = open("newfile.prjwsn", "w")
 	
 	entry_label_node_id = Label(text="Брой възли:")
 	entry_node_id = Entry(bg="white", fg="black", border=3)
