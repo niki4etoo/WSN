@@ -5,6 +5,7 @@ class Node:
 	name = ""
 	weight = [1, 20]
 	active = True
+	edge_length = 0
 	
 	def __init__(self, name, grid, posX, posY, active):
 		self.name = name 	 # Name of the node
@@ -13,10 +14,12 @@ class Node:
 		self.posY = posY 	 # Position Y on the grid
 		self.active = active # Is active
 
-	def isEndingNode():
+	def isEndingNode(self, ending):
+		self.ending = ending
 		pass
 		
-	def isStartingNode():
+	def isStartingNode(self, starting):
+		self.starting = starting
 		pass
 
 	def description(self):

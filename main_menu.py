@@ -53,6 +53,8 @@ def add_nodes(i, nodes_count, name, weight, pos_x, pos_y, node_state):
 	node_pos_y_entry_label.grid(row=4, column=0, sticky=E)
 	node_pos_y_entry.grid(row=4, column=1, padx=10)
 	
+	print(nodes)
+	
 	node_start_radiobutton.grid(row=5, column=0)
 	node_end_radiobutton.grid(row=5, column=1)
 	node_button_add.grid(row=6, column=1, columnspan=2)
