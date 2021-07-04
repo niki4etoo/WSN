@@ -1,5 +1,9 @@
 class Grid:
 	nodesCount = 0
+	title = ""
+	text = ""
+	width = 0
+	height = 0
 	
 	def __init__(self, name, width, height):
 		self.name = name
@@ -12,6 +16,6 @@ class Grid:
 		self.height = height
 		self.nodesCount = nodesCount
 		
-	def description(self, title, text):
+	def description(self, title, text, description):
 		self.title = title
 		self.text = text
