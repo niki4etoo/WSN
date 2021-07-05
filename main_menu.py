@@ -12,6 +12,11 @@ global node_pos_y
 global nodes
 nodes = []
 
+def show_grid(nodes):
+	grid_label = Label(text="Name: " + str(nodes[0]))
+	grid_label.grid(row=1, column=0, padx=10, pady=10)
+	pass
+
 def add_nodes(i, nodes_count, name, weight, pos_x, pos_y, node_state):
 	node_name = name
 	node_weight = weight
@@ -39,7 +44,8 @@ def add_nodes(i, nodes_count, name, weight, pos_x, pos_y, node_state):
 	
 	if i == nodes_count:
 		node_button_add = Button(nodes_frame, text="Добави", state=DISABLED)
-		
+		show_nodes = Button(nodes_frame, text="Покажи", command=lambda: show_grid(nodes))
+		show_nodes.grid(row=6, column=0)
 	else:
 		node_button_add = Button(nodes_frame, text="Добави", command=lambda: add_nodes(i+1, nodes_count, str(node_name_entry.get()), int(node_weight_entry.get()), int(node_pos_x_entry.get()), int(node_pos_y_entry.get()), node_state.get()))
 	
