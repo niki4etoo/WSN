@@ -13,8 +13,8 @@ global nodes
 nodes = []
 
 def show_grid(nodes):
-	grid_label = Label(text="Name: " + str(nodes[0]))
-	grid_label.grid(row=1, column=0, padx=10, pady=10)
+	grid_label = Label(text="Name: " + str(nodes[0]) + " Weight: " + str(nodes[1]))
+	grid_label.grid(row=14, column=1, padx=10, pady=10)
 	pass
 
 def add_nodes(i, nodes_count, name, weight, pos_x, pos_y, node_state):
