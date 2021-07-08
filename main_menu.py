@@ -13,8 +13,12 @@ global nodes
 nodes = []
 
 def show_grid(nodes):
-	grid_label = Label(text="Name: " + str(nodes[0]) + " Weight: " + str(nodes[1]))
-	grid_label.grid(row=14, column=1, padx=10, pady=10)
+	global show_grid_window
+	show_grid_window = Tk()
+	show_grid_window.title("Информация за сензорната мрежа")
+	show_grid_window.geometry("400x250")
+	grid_label = Label(show_grid_window, text="Name: " + str(nodes[0]) + " Weight: " + str(nodes[1]))
+	grid_label.grid(row=0, column=1, padx=10, pady=10)
 	pass
 
 def add_nodes(i, nodes_count, name, weight, pos_x, pos_y, node_state):
