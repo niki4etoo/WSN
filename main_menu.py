@@ -132,9 +132,9 @@ def createNewGrid():
 	# Add button
 	button_add = Button(text="Добави", command=lambda: newGridWithNodesCount(int(entry_node_id.get())))
 	
-	entry_label_node_id.grid(row=1, column=0)
-	entry_node_id.grid(row=1, column=1)
-	button_add.grid(row=1, column=2)
+	entry_label_node_id.grid(row=1, column=0, padx=10, pady=10)
+	entry_node_id.grid(row=1, column=1, padx=10, pady=10)
+	button_add.grid(row=1, column=2, padx=10, pady=10)
 	pass
 		
 def openFile():

@@ -1,9 +1,6 @@
 import tkinter as tk
 from tkinter import *
-from pynput.mouse import Button, Controller
-
-import networkx as nx
-import matplotlib.pyplot as plt
+from PIL import ImageTk, Image
 
 from main_menu import MainMenu
 from user_input import UserInput
@@ -20,7 +17,8 @@ class Application(tk.Frame):
 
 root = tk.Tk()
 root.geometry("750x750+200+300")
-root.title("Wireless Sensor Network")
+root.title("Симулатор на безжична сензорна мрежа")
+root.wm_iconbitmap('@gear.xbm')
 
 app = Application(master=root)
 app.mainloop()
