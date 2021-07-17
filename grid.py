@@ -1,5 +1,9 @@
+import tkinter as tk
+from tkinter import *
+import main_menu
+
 class Grid:
-	nodesCount = 0
+	nodes_count = 0
 	title = ""
 	text = ""
 	width = 0
@@ -11,10 +15,10 @@ class Grid:
 		self.height = height
 		pass
 		
-	def grid(self, width, height, nodesCount):
+	def grid(self, i, width, height, nodes_count, nodes):
 		self.width = width
 		self.height = height
-		self.nodesCount = nodesCount
+		self.nodes_count = nodes_count
 		
 		# User Input
 		nodes_frame = LabelFrame(text="Възел " + str(i+1))
@@ -52,10 +56,6 @@ class Grid:
 		node_start_radiobutton.grid(row=5, column=0)
 		node_end_radiobutton.grid(row=5, column=1)
 		node_button_add.grid(row=6, column=1, columnspan=2)
-		
-		
-		
-	
 		
 	def description(self, title, text, description):
 		self.title = title
