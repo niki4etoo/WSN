@@ -13,17 +13,16 @@ class Node:
 		self.posX = posX	 # Position X on the grid
 		self.posY = posY 	 # Position Y on the grid
 		self.active = active # Is active
-
-	def isEndingNode(self, ending):
-		self.ending = ending
 		pass
 		
-	def isStartingNode(self, starting):
-		self.starting = starting
+	def add(self, newNode):
+		#To DO
 		pass
-
-	def description(self):
-		pass
-		
 	
-		
+	def remove(self, node):
+		#To DO
+		pass
+	
+	def update(self, node):
+		#To DO
+		pass
