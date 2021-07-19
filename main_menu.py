@@ -36,7 +36,11 @@ def add_nodes(i, nodes_count, name, weight, pos_x, pos_y, node_state):
 	grid = Grid("New Grid 1", 100, 100)
 	grid.grid(i, node_pos_x, node_pos_y, nodes_count, nodes)
 
-def newGridWithNodesCount(nodes_count):
+def newGridWithNodesCount(nodes_count, filename):
+	if filename != "":
+		# Creating new project file
+		new_file = open(filename + ".prjwsn", "w")
+	
 	# Frame for network parameters
 	network_parameters_frame = LabelFrame(text="Параметри", padx=10, pady=10)
 	if nodes_count >= 3:
@@ -90,17 +94,19 @@ def createNewGrid():
 	global entry_label_node_id
 	global entry_node_id
 	
-	# Creating new project file
-	new_file = open("newfile.prjwsn", "w")
-	
 	entry_label_node_id = Label(text="Брой възли:")
 	entry_node_id = Entry(bg="white", fg="black", border=3)
 	
+	entry_label_node_name = Label(text="Име на файл: ")
+	entry_node_name = Entry(bg="white", fg="black", border=3)
+	
 	# Add button
-	button_add = Button(text="Добави", command=lambda: newGridWithNodesCount(int(entry_node_id.get())))
+	button_add = Button(text="Добави", command=lambda: newGridWithNodesCount(int(entry_node_id.get()), str(entry_node_name.get())))
 	
 	entry_label_node_id.grid(row=1, column=0, padx=10, pady=10)
 	entry_node_id.grid(row=1, column=1, padx=10, pady=10)
+	entry_label_node_name.grid(row=2, column=0, padx=10, pady=10)
+	entry_node_name.grid(row=2, column=1, padx=10, pady=10)
 	button_add.grid(row=1, column=2, padx=10, pady=10)
 	pass
 		
