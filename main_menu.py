@@ -3,6 +3,8 @@ from tkinter import *
 from tkinter.messagebox import showinfo
 from tkinter import filedialog
 from grid import Grid
+from author import Author
+
 #Each node parameters
 global node_name
 global node_weight
@@ -135,6 +137,7 @@ def help_box():
 	pass
 
 def author():
+	author = Author("Николай", "Нанев")
 	pass
 
 def main_menu_english():
@@ -144,8 +147,8 @@ def main_menu_bulgarian():
 	pass
 
 def createNewNode():
-	name = "default"
-	print("Creating new node with name: " + name)
+	name = "по подразбиране"
+	print("Създаване на нов възел с име " + name)
 	pass
 
 class MainMenu():
