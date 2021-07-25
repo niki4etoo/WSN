@@ -6,15 +6,26 @@ class Grid:
 	nodes_count = 0
 	title = ""
 	text = ""
-	width = 0
-	height = 0
 	
-	def __init__(self, name, width, height):
+	#Windows
+	global grid_window
+	
+	#Buttons 
+	
+	
+	def __init__(self, name):
 		self.name = name
-		self.width = width
-		self.height = height
 		pass
 		
+	def show(self, nodes):
+		grid_window = Tk()
+		grid_window.title("Информация за сензорната мрежа")
+		grid_window.geometry("400x250")
+		grid_label = Label(show_grid_window, text="Име: " + str(nodes[0]) + " Тежест: " + str(nodes[1]))
+		grid_label.grid(row=0, column=1, padx=10, pady=10)
+	pass
+		
+	
 	def grid(self, i, width, height, nodes_count, nodes):
 		self.width = width
 		self.height = height
@@ -51,12 +62,6 @@ class Grid:
 		node_pos_y_entry_label.grid(row=4, column=0, sticky=E)
 		node_pos_y_entry.grid(row=4, column=1, padx=10)
 		
-		print(nodes)
-		
 		node_start_radiobutton.grid(row=5, column=0)
 		node_end_radiobutton.grid(row=5, column=1)
 		node_button_add.grid(row=6, column=1, columnspan=2)
-		
-	def description(self, title, text, description):
-		self.title = title
-		self.text = text

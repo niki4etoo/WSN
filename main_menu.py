@@ -14,15 +14,6 @@ global node_pos_y
 global nodes
 nodes = []
 
-def show_grid(nodes):
-	global show_grid_window
-	show_grid_window = Tk()
-	show_grid_window.title("Информация за сензорната мрежа")
-	show_grid_window.geometry("400x250")
-	grid_label = Label(show_grid_window, text="Name: " + str(nodes[0]) + " Weight: " + str(nodes[1]))
-	grid_label.grid(row=0, column=1, padx=10, pady=10)
-	pass
-
 def add_nodes(i, nodes_count, name, weight, pos_x, pos_y, node_state):
 	node_name = name
 	node_weight = weight
@@ -50,10 +41,13 @@ def newGridWithNodesCount(nodes_count, filename):
 		network_parameters_frame.grid(row=1, column=1, sticky=E, padx=10, pady=10)
 		nodes_count_label = Label(network_parameters_frame, text="Брой Възли: " + str(nodes_count))
 		nodes_count_label.grid(row=0, column=2)
+		
 		# Clear user input for nodes
 		button_add.grid_forget()
 		entry_node_id.grid_forget()
 		entry_label_node_id.grid_forget()
+		entry_file_name.grid_forget()
+		entry_label_file_name.grid_forget()
 		
 		global node_state
 		node_state = IntVar()
@@ -95,21 +89,23 @@ def createNewGrid():
 	global button_add
 	global entry_label_node_id
 	global entry_node_id
+	global entry_label_file_name
+	global entry_file_name
 	
 	entry_label_node_id = Label(text="Брой възли:")
 	entry_node_id = Entry(bg="white", fg="black", border=3)
 	
-	entry_label_node_name = Label(text="Име на файл: ")
-	entry_node_name = Entry(bg="white", fg="black", border=3)
+	entry_label_file_name = Label(text="Име на файл: ")
+	entry_file_name = Entry(bg="white", fg="black", border=3)
 	
 	# Add button
-	button_add = Button(text="Добави", command=lambda: newGridWithNodesCount(int(entry_node_id.get()), str(entry_node_name.get())))
+	button_add = Button(text="Добави", command=lambda: newGridWithNodesCount(int(entry_node_id.get()), str(entry_file_name.get())))
 	
+	entry_label_file_name.grid(row=0, column=0, padx=10, pady=10)
+	entry_file_name.grid(row=0, column=1, padx=10, pady=10)
 	entry_label_node_id.grid(row=1, column=0, padx=10, pady=10)
 	entry_node_id.grid(row=1, column=1, padx=10, pady=10)
-	entry_label_node_name.grid(row=2, column=0, padx=10, pady=10)
-	entry_node_name.grid(row=2, column=1, padx=10, pady=10)
-	button_add.grid(row=1, column=2, padx=10, pady=10)
+	button_add.grid(row=2, column=1, padx=10, pady=10)
 	pass
 		
 def openFile():
