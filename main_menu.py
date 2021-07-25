@@ -147,6 +147,14 @@ def createNewNode():
 	print("Създаване на нов възел с име " + name)
 	pass
 
+def generateGrid():
+	print("Generating a grid using the matlibplot")
+	pass
+
+def generateTable():
+	print("Generating a table with nodes parameters")
+	pass
+
 class MainMenu():
 	def __init__(self, master=None):
 		self.master = master
@@ -189,5 +197,10 @@ class MainMenu():
 		aboutMenu.add_command(label="Български", command=main_menu_bulgarian)
 		
 		menu.add_cascade(label="Относно", menu=aboutMenu)
+		
+		generateGrid = Menu(menu)
+		generateGrid.add_command(label="Мрежа", command=generateGrid)
+		generateGrid.add_command(label="Таблица", command=generateTable)
+		menu.add_cascade(label="Генерирай", menu=generateGrid, command=print("Generate a plot with the newly created nodes"))
 		
 		self.grid(row=0, column=0)
