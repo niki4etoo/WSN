@@ -1,10 +1,10 @@
 from tkinter import messagebox
 import webbrowser
 
-
-
-
 class Author:
+	new = 1
+	url = "https://www.github.com/niki4etoo/"
+	
 	def __init__(self, fname, lname):
 		self.fname = fname
 		self.lname = lname
@@ -14,9 +14,6 @@ class Author:
 		else:
 			print("Авторът на приложението е " + str(self.fname) + " " + str(self.lname))
 	pass
-	
-	new = 1
-	url = "https://www.github.com/niki4etoo/"
 
 	def opengithub(self):
 		webbrowser.open(self.url,new=self.new)
