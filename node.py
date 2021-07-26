@@ -8,6 +8,8 @@ class Node:
 	edge_length = 0
 	newNode = []
 	node = []
+	
+	
 	def __init__(self, name, grid, posX, posY, active):
 		self.name = name 	 # Name of the node
 		self.grid = grid	 # Which grid the node will be placed
