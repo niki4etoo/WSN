@@ -6,9 +6,7 @@ class Node:
 	weight = [1, 20]
 	active = True
 	edge_length = 0
-	newNode = []
-	node = []
-	
+	nodes = []
 	
 	def __init__(self, name, grid, posX, posY, active):
 		self.name = name 	 # Name of the node
@@ -20,18 +18,18 @@ class Node:
 		
 	def add(self, newNode):
 		#To DO
-		self.newNode = newNode
+		self.nodes.append(newNode)
 		print("Added new node")
 		pass
 	
 	def remove(self, node):
 		#To DO
-		self.node = []
+		self.nodes = []
 		print("The node has been removed")		
 		pass
 	
-	def update(self, node):
-		#To DO
-		self.node = node
+	def update(self, index, node):
+		self.nodes.pop(index)
+		self.nodes.insert(index, node)
 		print("The node has been updated")
 		pass
