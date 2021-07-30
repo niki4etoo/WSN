@@ -4,7 +4,7 @@ from tkinter.messagebox import showinfo
 from tkinter import filedialog
 from grid import Grid
 from author import Author
-
+from help import Help
 #Each node parameters
 global node_name
 global node_weight
@@ -130,6 +130,7 @@ def floyd_warshall_algorithm():
 	pass
 
 def help_box():
+	help = Help()
 	pass
 
 def author():
