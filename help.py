@@ -7,5 +7,5 @@ class Help:
 	
 	def __init__(self):
 		webbrowser.open(self.url,new=self.new)
-		
+		print("There is a github repository with the WSN Simulator Docs")
 		
