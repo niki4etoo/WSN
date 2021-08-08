@@ -5,6 +5,7 @@ from tkinter import filedialog
 from grid import Grid
 from author import Author
 from help import Help
+
 #Each node parameters
 global node_name
 global node_weight
