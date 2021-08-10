@@ -5,5 +5,6 @@ class Entries:
 	def __init__(self):
 	pass
 	
-	def node(self, entry_name):
+	def node(self, root):
+		self.node = Entry(root, border=3)
 	pass

@@ -17,7 +17,7 @@ class Application(tk.Frame):
 		exit()
 
 root = tk.Tk()
-root.geometry("750x750+200+300")
+root.geometry("450x450+200+300")
 root.title("Симулатор на безжична сензорна мрежа")
 root.wm_iconbitmap('@gear.xbm')
 
