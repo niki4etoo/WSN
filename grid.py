@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import *
-import main_menu
+import UI.main_menu
 
 class Grid:
 	nodes_count = 0

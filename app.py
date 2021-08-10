@@ -2,8 +2,7 @@ import tkinter as tk
 from tkinter import *
 from PIL import ImageTk, Image
 
-from main_menu import MainMenu
-from user_input import UserInput
+from UI.main_menu import MainMenu
 
 class Application(tk.Frame):
 	def __init__(self, master=None):
