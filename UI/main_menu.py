@@ -85,29 +85,6 @@ def newGridWithNodesCount(nodes_count, filename):
 		error_message_low_nodes = Label(network_parameters_frame, text="Броят възли е по-малък от 2. Моля добавете повече от два възела")
 		error_message_low_nodes.grid(row=1, column=0)
 		network_parameters_frame.grid(row=2, column=0, sticky=W+E)
-
-def createNewGrid():
-	global button_add
-	global entry_label_node_id
-	global entry_node_id
-	global entry_label_file_name
-	global entry_file_name
-	
-	entry_label_node_id = Label(text="Брой възли:")
-	entry_node_id = Entry(bg="white", fg="black", border=3)
-	
-	entry_label_file_name = Label(text="Име на файл: ")
-	entry_file_name = Entry(bg="white", fg="black", border=3)
-	
-	# Add button
-	button_add = Button(text="Добави", command=lambda: newGridWithNodesCount(int(entry_node_id.get()), str(entry_file_name.get())))
-	
-	entry_label_file_name.grid(row=0, column=0, padx=10, pady=10)
-	entry_file_name.grid(row=0, column=1, padx=10, pady=10)
-	entry_label_node_id.grid(row=1, column=0, padx=10, pady=10)
-	entry_node_id.grid(row=1, column=1, padx=10, pady=10)
-	button_add.grid(row=2, column=1, padx=10, pady=10)
-	pass
 		
 def openFile():
 	filedialog.askopenfilename(initialdir="files", title="Select a file", filetypes=(("pdf files", "*.pdf"),("project files", "*.prjwsn")))
