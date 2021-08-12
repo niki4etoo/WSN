@@ -23,7 +23,7 @@ class Grid:
 		self.name = name
 		pass
 		
-	def createNewGrid():	
+	def createNew():	
 		entry_label_node_id = Label(text="Брой възли:")
 		entry_node_id = Entry(bg="white", fg="black", border=3)
 		
