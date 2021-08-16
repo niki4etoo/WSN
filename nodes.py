@@ -27,3 +27,7 @@ class Nodes(Node):
 		#To do
 		pass
 		
+	def show(self, nodes):
+		print("Show all nodes available")
+		print(nodes)
+		pass
