@@ -3,7 +3,7 @@ from tkinter import *
 import UI.main_menu
 
 class Grid:
-	global button_add
+	
 	global entry_label_node_id
 	global entry_node_id
 	global entry_label_file_name
@@ -17,7 +17,7 @@ class Grid:
 	global grid_window
 	
 	#Buttons 
-	
+	global button_add
 	
 	def __init__(self, name):
 		self.name = name
