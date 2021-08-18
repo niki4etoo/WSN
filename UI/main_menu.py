@@ -37,12 +37,6 @@ def add_nodes(i, nodes_count, name, weight, pos_x, pos_y, node_state):
 def openFile():
 	filedialog.askopenfilename(initialdir="files", title="Select a file", filetypes=(("pdf files", "*.pdf"),("project files", "*.prjwsn")))
 
-def saveNewGrid():
-	pass
-	
-def saveAsNewGrid():
-	pass
-
 def dijkstra_algorithm():
 	# Python program for Dijkstra's single
 	# source shortest path algorithm. The program is
@@ -127,27 +121,12 @@ def dijkstra_algorithm():
 	
 	pass
 
-def belman_ford_algorithm():
-	pass
-	
-def a_star_algorithm():
-	pass
-	
-def floyd_warshall_algorithm():
-	pass
-
 def help_box():
 	help = Help()
 	pass
 
 def author():
 	author = Author("Николай", "Нанев")
-	pass
-
-def main_menu_english():
-	pass
-	
-def main_menu_bulgarian():
 	pass
 
 def createNewNode():
