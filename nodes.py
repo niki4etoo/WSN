@@ -21,6 +21,7 @@ class Nodes(Node):
 		
 	def remove(self, nodes):
 		#To Do
+		nodes = []
 		pass
 		
 	def update(self, nodes):
