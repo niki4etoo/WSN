@@ -9,6 +9,7 @@ class Path:
 	active = False
 	weight = [1, 10] #weight of the path
 	length = [0, 10]
+	visited = False
 	
 	def __init__(self, weight, length, active):
 		print(weight)
@@ -17,6 +18,10 @@ class Path:
 	
 	def is_active(self):
 	    return active
+	pass
+	
+	def is_visited(self):
+		return visited
 	pass
 	
 test_path = Path([1, 20], 50, True)
