@@ -16,12 +16,16 @@ class Path:
 		print(length)
 		pass
 	
-	def is_active(self):
+	def isActive(self):
 	    return active
 	pass
 	
-	def is_visited(self):
+	def isVisited(self):
 		return visited
+	pass
+	
+	def getLength(self):
+		return length
 	pass
 	
 test_path = Path([1, 20], 50, True)
