@@ -23,12 +23,25 @@ starGraph.add_edges_from(starEdges)
 pos = nx.spring_layout(starGraph)
 plt.figure()
 nx.draw(starGraph, with_labels=True, font_weight='bold', node_size=800)
+plt.show()
+
+#Display Mesh graph
+meshGraph = nx.Graph()
+meshEdges = [['EP1', 'G'], ['EP2', 'G'], ['EP3', 'G'], ['EP4', 'G'], ['EP5', 'G'],
+			 ['EP1', 'EP2'], ['EP2', 'EP3'], ['EP3', 'EP4'], ['EP4', 'EP5'], ['EP5', 'EP1']]
+meshGraph.add_edges_from(meshEdges)
+pos = nx.spring_layout(meshGraph)
+#plt.figure()
+#nx.draw(meshGraph, with_labels=True, font_weight='bold', node_size=800)
 #plt.show()
 
-#To do
-starEdges = [['EP1', 'G'], ['EP2', 'G'], ['EP3', 'G'], ['EP4', 'G'], ['EP5', 'G']]
-starGraph.add_edges_from(starEdges)
-pos = nx.spring_layout(starGraph)
+#Display Star-Mesh Graph
+starMeshGraph = nx.Graph()
+starMeshEdges = [['EP1', 'G'], ['EP2', 'G'], ['EP3', 'G'], ['EP4', 'G'], ['EP5', 'G'],
+			 ['EP1', 'EP2'], ['EP2', 'EP3'], ['EP3', 'EP4'], ['EP4', 'EP5'], ['EP5', 'EP1'],
+			 ['EP1', 'E'], ['EP2', 'E'], ['EP5', 'M'], ['EP1', 'M'], ['EP3', 'T'], ['EP4', 'T']]
+starMeshGraph.add_edges_from(starMeshEdges)
+pos = nx.spring_layout(starMeshGraph)
 plt.figure()
-nx.draw(starGraph, with_labels=True, font_weight='bold', node_size=800)
+nx.draw(starMeshGraph, with_labels=True, font_weight='bold', node_size=800)
 plt.show()
