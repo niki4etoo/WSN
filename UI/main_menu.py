@@ -15,6 +15,18 @@ global node_pos_y
 global nodes
 nodes = []
 
+def main_menu_english():
+	pass
+
+def main_menu_bulgarian():
+	pass
+
+def saveNewGrid():
+	pass
+
+def saveAsNewGrid():
+	pass
+
 def createNewGrid():
 	grid = Grid("name")
 	grid.createNew()
@@ -171,9 +183,6 @@ class MainMenu():
 
 		algorithmsMenu = Menu(menu)
 		algorithmsMenu.add_command(label="Дейкстра", command=dijkstra_algorithm)
-		algorithmsMenu.add_command(label="Белман-Форд", command=belman_ford_algorithm)
-		algorithmsMenu.add_command(label="А*", command=a_star_algorithm)
-		algorithmsMenu.add_command(label="Флойд-Уоршал", command=floyd_warshall_algorithm)
 
 		menu.add_cascade(label="Алгоритми", menu=algorithmsMenu)
 		
