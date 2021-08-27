@@ -4,10 +4,16 @@ import UI.main_menu
 
 class Grid:
 	
-	global entry_label_node_id
-	global entry_node_id
+	#Input fields for a new file and nodes count 
+	
+	global entry_label_nodes_count
+	global entry_nodes_count
 	global entry_label_file_name
 	global entry_file_name
+	
+	#Members for error messages
+	global error_messages_frame
+	global error_message_low_nodes
 	
 	nodes_count = 0
 	title = ""
@@ -19,46 +25,49 @@ class Grid:
 	#Buttons 
 	global button_add
 	
-	def __init__(self, name):
-		self.name = name
+	def __init__(self):
 		pass
 		
-	def createNew(self):	
-		entry_label_node_id = Label(text="Брой възли:")
-		entry_node_id = Entry(bg="white", fg="black", border=3)
+	def createNew(self):
+		self.entry_label_nodes_count = Label(text="Брой възли:")
+		self.entry_nodes_count = Entry(bg="white", fg="black", border=3)
 		
-		entry_label_file_name = Label(text="Име на файл: ")
-		entry_file_name = Entry(bg="white", fg="black", border=3)
+		self.entry_label_file_name = Label(text="Име на файл: ")
+		self.entry_file_name = Entry(bg="white", fg="black", border=3)
 		
 		# Add button
-		button_add = Button(text="Добави", command=lambda: self.newGrid(int(entry_node_id.get()), str(entry_file_name.get())))
+		self.button_add = Button(text="Добави", command=lambda: self.newGrid(int(self.entry_nodes_count.get()), str(self.entry_file_name.get())))
 		
-		entry_label_file_name.grid(row=0, column=0, padx=10, pady=10)
-		entry_file_name.grid(row=0, column=1, padx=10, pady=10)
-		entry_label_node_id.grid(row=1, column=0, padx=10, pady=10)
-		entry_node_id.grid(row=1, column=1, padx=10, pady=10)
-		button_add.grid(row=2, column=1, padx=10, pady=10)
+		# Layout for the adding new file
+		self.entry_label_file_name.grid(row=1, column=0, padx=10, pady=10)
+		self.entry_file_name.grid(row=1, column=1, padx=10, pady=10)
+		self.entry_label_nodes_count.grid(row=2, column=0, padx=10, pady=10)
+		self.entry_nodes_count.grid(row=2, column=1, padx=10, pady=10)
+		self.button_add.grid(row=3, column=1, padx=10, pady=10)
 	pass
 	
 	def newGrid(self, nodes_count, filename):
-		if filename != "":
-			# Creating new project file
-			new_file = open(filename + ".prjwsn", "w")
 	
 		# Frame for network parameters
 		network_parameters_frame = LabelFrame(text="Параметри", padx=10, pady=10)
-		if nodes_count >= 3:
+		if nodes_count > 3:
+			if filename != "":
+				# Creating new project file
+				new_file = open(filename + ".prjwsn", "w")
+			
 			global nodes_count_label
 			network_parameters_frame.grid(row=1, column=1, sticky=E, padx=10, pady=10)
 			nodes_count_label = Label(network_parameters_frame, text="Брой Възли: " + str(nodes_count))
 			nodes_count_label.grid(row=0, column=2)
 			
 			# Clear user input for nodes
-			button_add.grid_forget()
-			entry_node_id.grid_forget()
-			entry_label_node_id.grid_forget()
-			entry_file_name.grid_forget()
-			entry_label_file_name.grid_forget()
+			self.button_add.grid_forget()
+			self.entry_nodes_count.grid_forget()
+			self.entry_label_nodes_count.grid_forget()
+			self.entry_file_name.grid_forget()
+			self.entry_label_file_name.grid_forget()
+			if hasattr(self, 'error_messages_frame'):
+				self.error_messages_frame.grid_forget()
 			
 			global node_state
 			node_state = IntVar()
@@ -75,7 +84,7 @@ class Grid:
 			node_pos_y_entry = Entry(nodes_frame, bg="white", fg="black", border=3)
 			node_start_radiobutton = Radiobutton(nodes_frame, text="Начален", variable=node_state, value="1")
 			node_end_radiobutton = Radiobutton(nodes_frame, text="Краен", variable=node_state, value="2")
-			node_button_add = Button(nodes_frame, text="Добави", command=lambda: add_nodes(i+1, nodes_count, str(node_name_entry.get()), int(node_weight_entry.get()), int(node_pos_x_entry.get()), int(node_pos_y_entry.get()), node_state.get()))
+			node_button_add = Button(nodes_frame, text="Добави", command=lambda: self.grid(i+1, nodes_count, str(node_name_entry.get()), int(node_weight_entry.get()), int(node_pos_x_entry.get()), int(node_pos_y_entry.get()), node_state.get()))
 			
 			nodes_frame.grid(row=1, column=0, padx=30, pady=10)
 			node_name_entry_label.grid(row=1, column=0, sticky=E)
@@ -90,11 +99,12 @@ class Grid:
 			node_end_radiobutton.grid(row=5, column=1)
 			node_button_add.grid(row=6, column=1, columnspan=2)
 			
-		elif nodes_count < 2:
-			global error_message_low_nodes
-			error_message_low_nodes = Label(network_parameters_frame, text="Броят възли е по-малък от 2. Моля добавете повече от два възела")
-			error_message_low_nodes.grid(row=1, column=0)
-			network_parameters_frame.grid(row=2, column=0, sticky=W+E)
+		elif nodes_count <= 3:
+			self.error_messages_frame = LabelFrame(padx=10, pady=10)
+			self.error_message_low_nodes = Label(self.error_messages_frame, text="Броят възли е по-малък от 3. Моля добавете повече от три възела")
+			print(self.error_messages_frame)
+			self.error_messages_frame.grid(row=0, column=0)
+			self.error_message_low_nodes.grid(row=0, column=0)
 	pass
 	
 	def show(self, nodes):
@@ -130,7 +140,7 @@ class Grid:
 			show_nodes = Button(nodes_frame, text="Покажи", command=lambda: show_grid(nodes))
 			show_nodes.grid(row=6, column=0)
 		else:
-			node_button_add = Button(nodes_frame, text="Добави", command=lambda: add_nodes(i+1, nodes_count, str(node_name_entry.get()), int(node_weight_entry.get()), int(node_pos_x_entry.get()), int(node_pos_y_entry.get()), node_state.get()))
+			node_button_add = Button(nodes_frame, text="Добави", command=lambda: self.grid(i+1, nodes_count, str(node_name_entry.get()), int(node_weight_entry.get()), int(node_pos_x_entry.get()), int(node_pos_y_entry.get()), node_state.get()))
 		
 		nodes_frame.grid(row=1, column=0, padx=20, pady=10)
 		node_name_entry_label.grid(row=1, column=0, sticky=E)

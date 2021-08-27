@@ -19,6 +19,6 @@ root = tk.Tk()
 root.geometry("450x450+150+150")
 root.title("Симулатор на безжична сензорна мрежа")
 root.wm_iconbitmap('@gear.xbm')
-
+root.attributes('-zoomed', True)
 app = Application(master=root)
 app.mainloop()

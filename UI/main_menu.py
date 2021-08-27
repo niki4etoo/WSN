@@ -28,7 +28,7 @@ def saveAsNewGrid():
 	pass
 
 def createNewGrid():
-	grid = Grid("name")
+	grid = Grid()
 	grid.createNew()
 
 def add_nodes(i, nodes_count, name, weight, pos_x, pos_y, node_state):
