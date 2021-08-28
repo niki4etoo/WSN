@@ -45,3 +45,21 @@ pos = nx.spring_layout(starMeshGraph)
 plt.figure()
 nx.draw(starMeshGraph, with_labels=True, font_weight='bold', node_size=800)
 plt.show()
+
+#Display example 1 of adjecancy matrix graph
+starMeshGraph = nx.Graph()
+starMeshEdges = [['1', '2'], ['1', '3'], ['2', '3'], ['2', '4'], ['4', '3'], ['4', '5'], ['5', '2'], ['5', '3']]
+starMeshGraph.add_edges_from(starMeshEdges)
+pos = nx.spring_layout(starMeshGraph)
+plt.figure()
+nx.draw(starMeshGraph, with_labels=True, font_weight='bold', node_size=800)
+plt.show()
+
+#Display example 2 of adjecancy matrix graph (to do )
+starMeshGraph = nx.Graph()
+starMeshEdges = [['1', '1'], ['1', '2'], ['1', '5'], ['2', '5'], ['2', '3'], ['3', '4'], ['4', '5'], ['4', '6']]
+starMeshGraph.add_edges_from(starMeshEdges)
+pos = nx.spring_layout(starMeshGraph)
+plt.figure()
+nx.draw(starMeshGraph, with_labels=True, font_weight='bold', node_size=800)
+plt.show()
