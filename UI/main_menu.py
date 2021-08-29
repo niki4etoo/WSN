@@ -49,6 +49,9 @@ def add_nodes(i, nodes_count, name, weight, pos_x, pos_y, node_state):
 def openFile():
 	filedialog.askopenfilename(initialdir="files", title="Select a file", filetypes=(("pdf files", "*.pdf"),("project files", "*.prjwsn")))
 
+def bellmanford_algorithm():
+	pass
+
 def dijkstra_algorithm():
 	# Python program for Dijkstra's single
 	# source shortest path algorithm. The program is
@@ -183,6 +186,7 @@ class MainMenu():
 
 		algorithmsMenu = Menu(menu)
 		algorithmsMenu.add_command(label="Дейкстра", command=dijkstra_algorithm)
+		algorithmsMenu.add_command(label="Белман-Форд", command=bellmanford_algorithm)
 
 		menu.add_cascade(label="Алгоритми", menu=algorithmsMenu)
 		
