@@ -10,8 +10,6 @@ class Application(tk.Frame):
 		self.master = master
 		menu = MainMenu.main_menu(self)
 		
-		
-		
 	def exitProgram(self):
 		exit()
 

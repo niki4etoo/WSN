@@ -148,7 +148,19 @@ def createNewNode():
 	name = "по подразбиране"
 	print("Създаване на нов възел с име " + name)
 	pass
+	
+def chooseNode():
+	pass
 
+def moveNode():
+	pass
+
+def renameNode():
+	pass
+	
+def deleteNode():
+	pass
+	
 def generateGrid():
 	print("Generating a grid using the matlibplot")
 	pass
@@ -177,10 +189,10 @@ class MainMenu():
 		
 		nodeMenu = Menu(menu)
 		nodeMenu.add_command(label="Създай нов", command=createNewNode)
-		nodeMenu.add_command(label="Избери")
-		nodeMenu.add_command(label="Премести")
-		nodeMenu.add_command(label="Преименувай")
-		nodeMenu.add_command(label="Изтрий")
+		nodeMenu.add_command(label="Избери", command=chooseNode)
+		nodeMenu.add_command(label="Премести", command=moveNode)
+		nodeMenu.add_command(label="Преименувай", command=renameNode)
+		nodeMenu.add_command(label="Изтрий", command=deleteNode)
 		
 		menu.add_cascade(label="Възел", menu=nodeMenu)
 
